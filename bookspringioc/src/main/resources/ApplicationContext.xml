@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+  <bean id="userDaoImpl" class="com.zzp.springioc.UserDaoImpl"/>
+  <bean id="flutter" class="com.zzp.springioc.Book" scope="prototype"/>
+  <bean id="userDaoImplPrototype" class="com.zzp.springioc.UserDaoImpl" scope="prototype"/>
+  <bean id="personSuccess" class="com.zzp.springioc.PersonSuccess" >
+    <property name="userDao" ref="userDaoImpl"/>
+  </bean>
+  <bean id="personWithSkill" class="com.zzp.springioc.PersonSuccess">
+    <constructor-arg index="0" ref="userDaoImpl" />
+    <constructor-arg index="1">
+      <list>
+        <value>"eat"</value>
+        <value>"sleep"</value>
+      </list>
+    </constructor-arg>
+  </bean>
+</beans>
