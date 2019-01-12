@@ -2,13 +2,13 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-  <bean id="userDaoImpl" class="com.zzp.springioc.UserDaoImpl"/>
-  <bean id="flutter" class="com.zzp.springioc.Book" scope="prototype"/>
-  <bean id="userDaoImplPrototype" class="com.zzp.springioc.UserDaoImpl" scope="prototype"/>
-  <bean id="personSuccess" class="com.zzp.springioc.PersonSuccess" >
+  <bean id="userDaoImpl" class="com.zzp.springioc.xml.UserDaoImpl"/>
+  <bean id="flutter" class="com.zzp.springioc.xml.Book" scope="prototype"/>
+  <bean id="userDaoImplPrototype" class="com.zzp.springioc.xml.UserDaoImpl" scope="prototype"/>
+  <bean id="personSuccess" class="com.zzp.springioc.xml.PersonSuccess" >
     <property name="userDao" ref="userDaoImpl"/>
   </bean>
-  <bean id="personWithSkill" class="com.zzp.springioc.PersonSuccess">
+  <bean id="personWithSkill" class="com.zzp.springioc.xml.PersonSuccess">
     <constructor-arg index="0" ref="userDaoImpl" />
     <constructor-arg index="1">
       <list>

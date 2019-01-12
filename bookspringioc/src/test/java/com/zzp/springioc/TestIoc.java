@@ -1,16 +1,17 @@
 package com.zzp.springioc;
 
-import com.zzp.springioc.autowiring.Furniture;
 import com.zzp.springioc.autowiring.FurnitureConfig;
 import com.zzp.springioc.autowiring.Table;
 import com.zzp.springioc.autowiring.otherannotation.FurnitureController;
-import javafx.scene.control.Tab;
+import com.zzp.springioc.xml.PersonSuccess;
+import com.zzp.springioc.xml.Success;
+import com.zzp.springioc.xml.UserDao;
 import org.junit.Test;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+//ById其实就是name字段，但是我不了解的是如果id和name同时声明且值不同，那结果会发生什么
 public class TestIoc {
   //测试带id的通过xml注入的bean
   @Test
@@ -54,6 +55,10 @@ public class TestIoc {
     System.out.println(table);
   }
 
+  /**
+   * 测试controller，service，repository，resource，autowired注解，注意的是，这里如果声明了name，可以按照name引入，
+   * 否则的话就是按照类型引入
+   */
   @Test
   public void testAnnotation() {
     ApplicationContext applicationContext = new AnnotationConfigApplicationContext(
