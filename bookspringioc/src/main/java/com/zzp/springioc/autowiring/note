@@ -1,0 +1,4 @@
+家具厂的例子，这是我写的例子
+这里是自动注入的例子，通过@Component标记（可以加参数name），然后在FurnitureConfig中添加两个注解
+Configuration 和 ComponentScan
+这里面也有作用域的知识点

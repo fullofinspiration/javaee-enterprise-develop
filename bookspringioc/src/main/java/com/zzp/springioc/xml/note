@@ -1,0 +1,2 @@
+这里是测试xml的，xml有两种方法注入，一种是构造器注入，通过constructor-arg来引入，
+另一种是设置set方法后，通过xml的property的name字段，然后注入
